@@ -209,9 +209,8 @@ def parse_model_input(model_input: str) -> tuple[str, str, str]:
 
 
 def fetch_repo_files(repo_id: str, revision: str, subdir: str) -> list[dict]:
-    encoded_repo = repo_id.replace("/", "%2F")
     encoded_revision = urllib.parse.quote(revision, safe="")
-    api_url = f"https://huggingface.co/api/models/{encoded_repo}/revision/{encoded_revision}?full=true"
+    api_url = f"https://huggingface.co/api/models/{repo_id}/revision/{encoded_revision}?full=true"
 
     try:
         payload = http_json(api_url)
