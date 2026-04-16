@@ -37,4 +37,5 @@ exec "$LLAMA_DIR/build/bin/llama-server" \
   --port "$PORT" \
   -c "$CTX_SIZE" \
   -ngl "$GPU_LAYERS" \
+  -fa \
   "$@"
